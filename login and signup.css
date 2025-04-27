@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; 
+    position: relative;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    width: 700px;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(8px); 
+    background-color: rgba(255, 255, 255, 0.25); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background-image: url('logi.jpeg');
+    background-size: cover; 
+    background-position: center;
+}
+
+.form-container {
+    width: 50%;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.login-form, .signup-form {
+    background-color: rgba(229, 177, 177, 0.7); 
+    backdrop-filter: blur(5px); 
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); 
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(221, 221, 221, 0.6);
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(3px); 
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4C7C4C;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(76, 124, 76, 0.2);
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.terms-checkbox label {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.action-button {
+    background-color: rgba(76, 124, 76, 0.8);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(3px); 
+}
+
+.action-button:hover {
+    background-color: rgba(58, 94, 58, 0.9);
+    transform: translateY(-2px); 
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.toggle-link a {
+    color: #4C7C4C;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.toggle-link a:hover {
+    color: #3a5e3a;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Hide non-active forms */
+#forgot-password-form,
+#new-password-form,
+#signup-form-container {
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-content .close-button {
+    background-color: rgba(76, 124, 76, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.modal-content .close-button:hover {
+    background-color: rgba(58, 94, 58, 0.9);
+    transform: translateY(-2px);
+}
